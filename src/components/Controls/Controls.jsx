@@ -37,10 +37,11 @@
 
 // export default Controls;
 
-function Controls({ changeIndex }) {
+function Controls({ changeIndex, prevBtnDisabled, nextBtnDisabled }) {
   return (
     <section>
       <button
+        // disabled={prevBtnDisabled}
         type="button"
         onClick={() => {
           changeIndex(-1);
@@ -49,6 +50,7 @@ function Controls({ changeIndex }) {
       </button>
       <button
         type="button"
+        // disabled={nextBtnDisabled}
         onClick={() => {
           changeIndex(1);
         }}>
