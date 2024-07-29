@@ -1,5 +1,5 @@
 import Reader from "components/Reader";
-import publicationsList from "publications.json";
+import publicationsList from "../publications.json";
 
 function App() {
   return (
