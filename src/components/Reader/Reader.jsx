@@ -4,12 +4,35 @@ import Publication from "components/Publication";
 import React, { Component } from "react";
 
 class Reader extends Component {
+  state = {
+    publicationIndex: 0,
+  };
+
+  changeIndex = step => {
+    this.setState(prevState => ({
+      publicationIndex: prevState.publicationIndex + step,
+    }));
+  };
+
   render() {
+    const { items } = this.props;
+    const { publicationIndex } = this.state;
+    const totalItems = items.length;
+
+    const prevBtnDisabled = publicationIndex === 0;
+    const nextBtnDisabled = publicationIndex + 1 === totalItems;
+
     return (
       <div>
-        <Controls></Controls>
-        <Progress></Progress>
-        <Publication></Publication>
+        <Controls
+          changeIndex={this.changeIndex}
+          prevBtnDisabled={prevBtnDisabled}
+          nextBtnDisabled={nextBtnDisabled}
+          // totalItems={totalItems}
+          // publicationIndex={publicationIndex}
+        />
+        <Progress publicationIndex={publicationIndex} totalItems={totalItems} />
+        <Publication item={items[publicationIndex]} />
       </div>
     );
   }

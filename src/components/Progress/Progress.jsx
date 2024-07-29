@@ -2,7 +2,12 @@ import React, { Component } from "react";
 
 class Progress extends Component {
   render() {
-    return <p>1/10</p>;
+    const { publicationIndex, totalItems } = this.props;
+    return (
+      <p>
+        {publicationIndex + 1}/{totalItems}
+      </p>
+    );
   }
 }
 
