@@ -2,7 +2,7 @@
 
 // class Publication extends Component {
 //   render() {
-//     const { title, text } = this.props.item;
+//     const { title, text } = this.props;
 
 //     return (
 //       <article>
@@ -15,7 +15,7 @@
 
 // export default Publication;
 
-function Publication({ item: { title, text } }) {
+function Publication({ title, text }) {
   return (
     <article>
       <h2>{title}</h2>

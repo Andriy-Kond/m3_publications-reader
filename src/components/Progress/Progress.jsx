@@ -2,10 +2,10 @@
 
 // class Progress extends Component {
 //   render() {
-//     const { publicationIndex, totalItems } = this.props;
+//     const { currentIndex, totalItems } = this.props;
 //     return (
 //       <p>
-//         {publicationIndex + 1}/{totalItems}
+//         {currentIndex}/{totalItems}
 //       </p>
 //     );
 //   }
@@ -13,10 +13,10 @@
 
 // export default Progress;
 
-function Progress({ publicationIndex, totalItems }) {
+function Progress({ currentIndex, totalItems }) {
   return (
     <p>
-      {publicationIndex + 1}/{totalItems}
+      {currentIndex}/{totalItems}
     </p>
   );
 }

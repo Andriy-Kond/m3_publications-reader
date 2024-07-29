@@ -30,6 +30,8 @@ class Reader extends Component {
     const { publicationIndex } = this.state;
     const totalItems = items.length;
 
+    const { title, text } = items[publicationIndex];
+
     // const prevBtnDisabled = publicationIndex === 0;
     // const nextBtnDisabled = publicationIndex + 1 === totalItems;
 
@@ -44,8 +46,8 @@ class Reader extends Component {
           // totalItems={totalItems}
           // publicationIndex={publicationIndex}
         />
-        <Progress publicationIndex={publicationIndex} totalItems={totalItems} />
-        <Publication item={items[publicationIndex]} />
+        <Progress currentIndex={publicationIndex + 1} totalItems={totalItems} />
+        <Publication title={title} text={text} />
       </div>
     );
   }
