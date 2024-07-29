@@ -6,15 +6,15 @@ class Controls extends Component {
       changeIndex,
       // totalItems,
       // publicationIndex,
-      prevBtnDisabled,
-      nextBtnDisabled,
+      // prevBtnDisabled,
+      // nextBtnDisabled,
     } = this.props;
 
     return (
       <section>
         <button
           // disabled={publicationIndex === 0}
-          disabled={prevBtnDisabled}
+          // disabled={prevBtnDisabled}
           type="button"
           onClick={() => {
             changeIndex(-1);
@@ -23,7 +23,7 @@ class Controls extends Component {
         </button>
         <button
           // disabled={publicationIndex + 1 === totalItems}
-          disabled={nextBtnDisabled}
+          // disabled={nextBtnDisabled}
           type="button"
           onClick={() => {
             changeIndex(1);

@@ -9,6 +9,17 @@ class Reader extends Component {
   };
 
   changeIndex = step => {
+    const { publicationIndex } = this.state;
+    const itemsLength = this.props.items.length;
+
+    if (publicationIndex === 0 && step === -1) {
+      return this.setState({ publicationIndex: itemsLength - 1 });
+    }
+
+    if (publicationIndex === itemsLength - 1 && step === 1) {
+      return this.setState({ publicationIndex: 0 });
+    }
+
     this.setState(prevState => ({
       publicationIndex: prevState.publicationIndex + step,
     }));
@@ -19,15 +30,17 @@ class Reader extends Component {
     const { publicationIndex } = this.state;
     const totalItems = items.length;
 
-    const prevBtnDisabled = publicationIndex === 0;
-    const nextBtnDisabled = publicationIndex + 1 === totalItems;
+    // const prevBtnDisabled = publicationIndex === 0;
+    // const nextBtnDisabled = publicationIndex + 1 === totalItems;
 
     return (
       <div>
         <Controls
           changeIndex={this.changeIndex}
-          prevBtnDisabled={prevBtnDisabled}
-          nextBtnDisabled={nextBtnDisabled}
+
+          // prevBtnDisabled={prevBtnDisabled}
+          // nextBtnDisabled={nextBtnDisabled}
+
           // totalItems={totalItems}
           // publicationIndex={publicationIndex}
         />
