@@ -1,9 +1,10 @@
 import Reader from "components/Reader";
-import publicationsList from "database/publications.json";
+import publicationsList from "publications.json";
 
 function App() {
   return (
     <>
+      <div>Hello</div>
       <Reader items={publicationsList} />
     </>
   );
